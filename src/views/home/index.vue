@@ -10,12 +10,12 @@
         </el-carousel-item>
       </el-carousel>
 
-      <div class="center-desc">
+      <!-- <div class="center-desc">
         <div class="center-desc-inner">
           <p>风靡欧美精英圈层的定制化学习服务</p>
           <p>专业品质 私奢服务</p>
         </div>
-      </div>
+      </div> -->
 
       <div class="bottom">
         <div class="bottom_inner">
@@ -320,7 +320,7 @@ export default {
       width: 100%;
       height: 100%;
 
-      background-image: url("~@/assets/image/home/hc.jpg");
+      background-image: url("~@/assets/image/home/hc1.jpg");
       background-size: cover; /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
       position: absolute; /* 不可缺少 */
       /* overflow: hidden; */
@@ -409,7 +409,7 @@ export default {
         font-size: 50px;
         .nav {
           width: 50px;
-          height: 2px;
+          height: 4px;
           background-color: $mainColor;
           border-radius: 2px;
           margin-top: 3px;
