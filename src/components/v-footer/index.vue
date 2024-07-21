@@ -17,7 +17,7 @@
 
       <div class="wxsys">
         <div>
-          <img src="~@/assets/image/home/gzh.jpg" width="258" />
+          <img src="~@/assets/image/home/zxzx_new.jpg" width="258" />
         </div>
 
         <div>打开微信扫一扫即可报名～</div>
@@ -38,6 +38,10 @@
 
       <div>
         <p>品牌介绍</p>
+        <p>
+          Eliet
+          English2018年成立于美国纽约，我们致力于为全球精英家庭提供完整的定制化教学服务。学员主要来自美国英国等发达国家。2024年我们落地中国杭州，我们期盼用全球化的课程服务团队为中国孩子带来真正的领先的学习体系。
+        </p>
         <!-- <p>团队介绍</p>
         <p>关于我们</p> -->
       </div>
@@ -115,7 +119,7 @@ export default {
   // height: 500px;
   box-sizing: border-box;
   background-color: #262627;
-  padding: 60px 360px;
+  padding: 60px 100px;
   display: flex;
   color: #999999;
 

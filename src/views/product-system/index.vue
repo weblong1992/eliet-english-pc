@@ -168,7 +168,7 @@ export default {
         width: 402px;
         height: 271px;
         // background-color: red;
-        margin-right: 20px;
+        margin-right: 40px;
         display: flex;
         align-items: center;
         justify-content: center;

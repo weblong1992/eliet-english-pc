@@ -8,7 +8,9 @@
         <p>1000+企业选择与我们一起携手共建</p>
         <p>专业级服务 用心打造</p>
 
-        <el-button class="mybtn" @click="freeTrial">申请免费试用</el-button>
+        <el-button class="mybtn" @click="freeTrial"
+          >开始定制化英语学习</el-button
+        >
       </div>
     </div>
 

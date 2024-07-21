@@ -27,7 +27,7 @@
           trigger="hover"
           popper-class="customPopper"
         >
-          <div><img src="~@/assets/image/home/gzh.jpg" width="100" /></div>
+          <div><img src="~@/assets/image/home/gzh_new.jpg" width="100" /></div>
           <div slot="reference">
             <div class="gzh_box">
               <img src="~@/assets/image/home/gzh.png" width="32" height="32" />
@@ -48,7 +48,7 @@
           v-model="form.phone"
           @input="handInput"
         />
-        <el-button class="toget" @click="open">立即领取</el-button>
+        <el-button class="toget" @click="open">立即开启</el-button>
       </el-form>
     </div>
 
