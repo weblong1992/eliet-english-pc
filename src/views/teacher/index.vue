@@ -97,7 +97,9 @@
         </div>
 
         <div class="item">
-          <div class="imgBox"></div>
+          <div class="imgBox">
+            <img src="~@/assets/image/teaching-staff/jxjy.jpg" />
+          </div>
 
           <div>100%五年以上教学经验</div>
         </div>
