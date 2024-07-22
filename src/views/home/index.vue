@@ -549,7 +549,8 @@ export default {
             width: 100%;
             display: flex;
             box-sizing: border-box;
-            padding: 0 360px;
+            // padding: 0 360px;
+            justify-content: center;
           }
 
           .w_360_box {

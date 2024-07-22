@@ -202,26 +202,81 @@
       </div>
     </div>
 
-    <!-- <div class="szjs">
+    <div class="szjs">
       <div class="title">师资介绍</div>
       <el-row :gutter="30">
         <el-col :span="8">
           <el-card shadow="always">
             <div class="myitem">
-              <div class="pic">pic</div>
+              <div class="pic">
+                <img src="~@/assets/image/teaching-staff/andrew.jpg" />
+              </div>
 
-              <div class="con">con</div>
+              <div class="con">
+                <p><span>Name：</span>Andrew</p>
+                <p><span>Nationality：</span>UK</p>
+                <p><span>Teaching experience:</span> 10 years</p>
+                <p>
+                  <span>Introduction：</span>
+                  I create a fun and interactive learning environment where
+                  students are encouraged to explore their creativity. I am also
+                  a strong advocate for using technology to enhance learning,
+                  and often use apps, games, and other digital tools in my
+                  lessons. I’m a dedicated and caring teacher who is committed
+                  to helping his students succeed.
+                </p>
+              </div>
             </div>
           </el-card>
         </el-col>
         <el-col :span="8">
-          <el-card shadow="always"> 鼠标悬浮时显示 </el-card>
+          <el-card shadow="always">
+            <div class="myitem">
+              <div class="pic">
+                <img src="~@/assets/image/teaching-staff/amma.jpg" />
+              </div>
+
+              <div class="con">
+                <p><span>Name：</span>Emma</p>
+                <p><span>Nationality：</span>USA</p>
+                <p><span>Teaching experience:</span> 8 years</p>
+                <p>
+                  <span>Introduction：</span>
+                  I really enjoy teaching and watching students grow and become
+                  more confident using their English. For me teaching is a
+                  wonderful and rewarding experience.
+                </p>
+              </div>
+            </div>
+          </el-card>
         </el-col>
         <el-col :span="8">
-          <el-card shadow="always"> 从不显示 </el-card>
+          <el-card shadow="always">
+            <div class="myitem">
+              <div class="pic">
+                <img src="~@/assets/image/teaching-staff/caroline.jpg" />
+              </div>
+
+              <div class="con">
+                <p><span>Name：</span>Caroline</p>
+                <p><span>Nationality：</span>USA</p>
+                <p><span>Teaching experience:</span> 25 years</p>
+                <p>
+                  <span>Introduction：</span>
+                  I am thrilled to be a part of this language learning journey
+                  with you. I bring a vibrant and enthusiastic approach to
+                  teaching, making our lessons not only informative but also
+                  enjoyable. With a passion for details, I ensure that every
+                  aspect of your learning experience is tailored to your needs
+                  and goals. I can't wait to embark on this learning adventure
+                  with you!
+                </p>
+              </div>
+            </div>
+          </el-card>
         </el-col>
       </el-row>
-    </div> -->
+    </div>
   </div>
 </template>
 <script>
@@ -602,9 +657,29 @@ export default {
     }
 
     .myitem {
-      display: flex;
+      height: 500px;
+      // display: flex;
       justify-content: center;
       // padding: 40px 0;
+
+      .pic {
+        display: flex;
+        justify-content: center;
+
+        & > img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+        }
+      }
+
+      .con {
+        padding: 40px 20px;
+
+        & span {
+          font-weight: bold;
+        }
+      }
     }
   }
 }
