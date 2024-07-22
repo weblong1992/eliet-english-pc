@@ -54,11 +54,24 @@
 
     <el-dialog
       center
-      title="免费体验课"
+      title="开启定制"
       :visible.sync="dialogVisible"
-      width="20%"
+      width="25%"
       @close="close"
     >
+      <el-dialog
+        width="70%"
+        :title="num === 1 ? '用户协议' : '隐私政策'"
+        :visible.sync="innerVisible"
+        append-to-body
+      >
+        <div>
+          <UserAgreement v-if="num === 1" />
+
+          <PrivacyPolicy v-if="num === 2" />
+        </div>
+      </el-dialog>
+
       <!-- 弹窗 -->
       <el-form ref="ruleForm" label-width="0px" class="demo-ruleForm">
         <div class="inputDeep">
@@ -125,6 +138,20 @@
             </el-input>
           </el-form-item>
         </div>
+        <!-- 用户协议和隐私协议 -->
+        <div class="xyBox">
+          <!-- `checked` 为 true 或 false -->
+
+          <div class="yxTxt">
+            <el-checkbox v-model="checked"></el-checkbox>
+            <span class="ml-5">我已阅读并同意</span>
+            <span class="mycolor" @click="agreement(1)"
+              >ELIET ENGLISH用户协议</span
+            >
+            <b>和</b>
+            <span class="mycolor" @click="agreement(2)">隐私政策</span>
+          </div>
+        </div>
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button class="submitBtn" @click="register">提交申请</el-button>
@@ -135,17 +162,24 @@
 <script>
 import Vheader from "@/components/v-header/index.vue";
 import VFooter from "@/components/v-footer/index.vue";
+import UserAgreement from "./UserAgreement.vue";
+import PrivacyPolicy from "./PrivacyPolicy.vue";
 import { GetCode, Register } from "@/api/register.js";
 
 export default {
   components: {
     Vheader,
     VFooter,
+    UserAgreement,
+    PrivacyPolicy,
   },
   data() {
     return {
+      num: 1, //1 用户协议 2 演示政策
+      checked: true,
       // form.phone: "",
       dialogVisible: false,
+      innerVisible: false,
       form: {
         name: "",
         phone: "",
@@ -210,6 +244,32 @@ export default {
         });
     },
     register() {
+      if (!this.form.name) {
+        this.$message({
+          type: "warning",
+          message: "请输入姓名",
+        });
+        return;
+      } else if (!this.form.phone) {
+        this.$message({
+          type: "warning",
+          message: "请输入手机号",
+        });
+        return;
+      } else if (!this.form.code) {
+        this.$message({
+          type: "warning",
+          message: "请输入验证码",
+        });
+        return;
+      } else if (!this.checked) {
+        this.$message({
+          type: "warning",
+          message: "需要同意ELIET ENGLISH用户协议哦~",
+        });
+        return;
+      }
+
       let data = {
         code: this.form.code,
         nickname: this.form.name,
@@ -258,8 +318,12 @@ export default {
         }
       }
     },
+    agreement(num) {
+      console.log(num);
+      this.num = num;
+      this.innerVisible = true;
+    },
   },
-  created() {},
 };
 </script>
 <style lang="scss" scoped>
@@ -394,6 +458,26 @@ export default {
 
 .auth_text_blue {
   color: #409eff;
+}
+
+.xyBox {
+  // margin-top: 120px;
+  // padding: 0 20px;
+  .yxTxt {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 10px;
+
+    .ml-5 {
+      margin-left: 5px;
+    }
+
+    .mycolor {
+      color: $mainColor;
+      cursor: pointer;
+    }
+  }
 }
 </style>
 <style>
