@@ -1,14 +1,13 @@
 <template>
   <div class="home">
     <div class="con">
-      <!-- <div class="con-img-box"></div> -->
-
-      <el-carousel indicator-position="none">
+      <div class="con-img-box"></div>
+      <!-- <el-carousel indicator-position="none">
         <el-carousel-item v-for="item in 2" :key="item">
-          <!-- <h3>{{ item }}</h3> -->
+    
           <div :class="'con-img-box' + item"></div>
         </el-carousel-item>
-      </el-carousel>
+      </el-carousel> -->
 
       <!-- <div class="center-desc">
         <div class="center-desc-inner">
@@ -310,16 +309,35 @@ export default {
 
   .con {
     position: relative;
+    position: relative;
+    width: 100%;
+    height: 960px;
+    // height: 590px;
+    // .el-carousel /deep/ .el-carousel__container {
+    //   height: 960px;
+    // }
 
-    .el-carousel /deep/ .el-carousel__container {
-      height: 960px;
-    }
+    // .con-img-box1,
+    // .con-img-box2 {
+    //   width: 100%;
+    //   height: 100%;
 
-    .con-img-box1,
-    .con-img-box2 {
+    //   background-image: url("~@/assets/image/home/hc1.jpg");
+    //   background-size: cover; /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
+    //   position: absolute; /* 不可缺少 */
+    //   /* overflow: hidden; */
+    //   /* overflow: auto; */
+    //   z-index: -1;
+    //   background-repeat: no-repeat;
+    // }
+
+    // .con-img-box2 {
+    //   background-image: url("~@/assets/image/home/bg.jpg");
+    // }
+
+    .con-img-box {
       width: 100%;
       height: 100%;
-
       background-image: url("~@/assets/image/home/hc1.jpg");
       background-size: cover; /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
       position: absolute; /* 不可缺少 */
@@ -327,10 +345,6 @@ export default {
       /* overflow: auto; */
       z-index: -1;
       background-repeat: no-repeat;
-    }
-
-    .con-img-box2 {
-      background-image: url("~@/assets/image/home/bg.jpg");
     }
 
     .center-desc {

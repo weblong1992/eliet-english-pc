@@ -157,17 +157,24 @@ export default {
   width: 100%;
   .part1 {
     width: 100%;
-    height: 582px;
+    height: 700px;
+    // height: 960px;
     // background-color: aqua;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("~@/assets/image/home/bg.jpg");
+    background-size: cover;
+    // width: 100%;
+    // background-image: url("~@/assets/image/educational-ideas/gjtd_bg.png");
+    background-repeat: no-repeat;
 
     & > div {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      color: #fff;
       & > p:nth-child(1) {
         font-size: 48px;
         margin-bottom: 10px;

@@ -229,27 +229,7 @@
             </div>
           </el-card>
         </el-col>
-        <el-col :span="8">
-          <el-card shadow="always">
-            <div class="myitem">
-              <div class="pic">
-                <img src="~@/assets/image/teaching-staff/amma.jpg" />
-              </div>
 
-              <div class="con">
-                <p><span>Name：</span>Emma</p>
-                <p><span>Nationality：</span>USA</p>
-                <p><span>Teaching experience:</span> 8 years</p>
-                <p>
-                  <span>Introduction：</span>
-                  I really enjoy teaching and watching students grow and become
-                  more confident using their English. For me teaching is a
-                  wonderful and rewarding experience.
-                </p>
-              </div>
-            </div>
-          </el-card>
-        </el-col>
         <el-col :span="8">
           <el-card shadow="always">
             <div class="myitem">
@@ -270,6 +250,28 @@
                   aspect of your learning experience is tailored to your needs
                   and goals. I can't wait to embark on this learning adventure
                   with you!
+                </p>
+              </div>
+            </div>
+          </el-card>
+        </el-col>
+
+        <el-col :span="8">
+          <el-card shadow="always">
+            <div class="myitem">
+              <div class="pic">
+                <img src="~@/assets/image/teaching-staff/amma.jpg" />
+              </div>
+
+              <div class="con">
+                <p><span>Name：</span>Emma</p>
+                <p><span>Nationality：</span>USA</p>
+                <p><span>Teaching experience:</span> 8 years</p>
+                <p>
+                  <span>Introduction：</span>
+                  I really enjoy teaching and watching students grow and become
+                  more confident using their English. For me teaching is a
+                  wonderful and rewarding experience.
                 </p>
               </div>
             </div>
