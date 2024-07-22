@@ -34,9 +34,20 @@ export default {
       ],
     };
   },
+  created() {
+    console.log(typeof localStorage.getItem("myIndex"));
+    if (localStorage.getItem("myIndex")) {
+      this.currentIndex = parseInt(localStorage.getItem("myIndex"));
+    }
+  },
+  beforeDestroy() {
+    localStorage.removeItem("myIndex");
+  },
   methods: {
     handleClickNav(i) {
       this.currentIndex = i;
+
+      localStorage.setItem("myIndex", i);
 
       if (i === 0) {
         this.$router.push({ path: "/home" });
@@ -54,7 +65,6 @@ export default {
       this.$store.commit("setRegisterDia", true);
     },
   },
-  created() {},
 };
 </script>
 <style lang="scss" scoped>

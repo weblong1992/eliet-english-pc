@@ -325,7 +325,7 @@ export default {
       position: relative;
       display: flex;
       justify-content: flex-end;
-      padding-right: 300px;
+      padding-right: 120px;
       padding-top: 190px;
 
       & > div {

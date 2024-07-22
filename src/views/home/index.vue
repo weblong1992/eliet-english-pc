@@ -115,7 +115,7 @@
               <div class="w_360_box">
                 <div>
                   <img
-                    src="~@/assets/image/home/a1.png"
+                    src="~@/assets/image/home/a2.jpg"
                     width="360"
                     height="200"
                   />
@@ -127,7 +127,7 @@
               <div class="w_360_box">
                 <div>
                   <img
-                    src="~@/assets/image/home/a1.png"
+                    src="~@/assets/image/home/a3.jpg"
                     width="360"
                     height="200"
                   />
@@ -562,6 +562,7 @@ export default {
               align-items: center;
               background-color: $mainColor;
               font-size: 24px;
+              color: #fff;
             }
           }
         }
