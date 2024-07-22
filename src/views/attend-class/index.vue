@@ -21,7 +21,7 @@
           <div class="opera">
             <div style="width: 163px">
               <el-input
-                v-model="phone"
+                v-model="mobile"
                 @input="handInput"
                 size="mini"
                 placeholder="请输入手机号"
@@ -276,23 +276,27 @@ export default {
   data() {
     return {
       phone: "",
+      mobile: "",
     };
   },
   methods: {
     handInput(value) {
-      this.phone = value.replace(/[^\d]/g, "");
+      // console.log(value);
+      this.mobile = value.replace(/[^\d]/g, "");
     },
+
     open() {
-      if (this.phone && this.phone.length === 11) {
+      if (this.mobile && this.mobile.length === 11) {
         this.$store.commit("setRegisterDia", true);
-        this.$store.commit("setPhone", this.phone);
+        this.$store.commit("setPhone", this.mobile);
+        // this.form.phone = this.mobile;
       } else {
-        if (!this.phone) {
+        if (!this.mobile) {
           this.$message({
             message: "请输入手机号",
             type: "warning",
           });
-        } else if (this.phone.length < 11 && this.phone.length > 0) {
+        } else if (this.mobile.length < 11 && this.mobile.length > 0) {
           this.$message({
             message: "手机号位数不正确",
             type: "warning",
@@ -301,7 +305,6 @@ export default {
       }
     },
   },
-  created() {},
 };
 </script>
 <style lang="scss" scoped>

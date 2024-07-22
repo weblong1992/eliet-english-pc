@@ -147,6 +147,8 @@ export default {
   methods: {
     freeTrial() {
       this.$store.commit("setRegisterDia", true);
+      this.$store.commit("setPhone", '');
+
     },
   },
   created() {},

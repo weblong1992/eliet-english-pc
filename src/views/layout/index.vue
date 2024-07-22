@@ -52,7 +52,7 @@
         <span>Eliet English邀您开启定制化学习之旅 </span>
         <el-input
           placeholder="请输入您的手机号"
-          v-model="form.phone"
+          v-model="mobile"
           @input="handInput"
         />
         <el-button class="toget" @click="open">立即开启</el-button>
@@ -103,6 +103,7 @@
               class="myInput"
               v-model="form.phone"
               placeholder="手机号/Phone"
+              @handInput="handInput1"
             >
               <template #prefix>
                 <div class="prefix">
@@ -182,6 +183,7 @@ export default {
   },
   data() {
     return {
+      mobile: "",
       num: 1, //1 用户协议 2 演示政策
       checked: true,
       // form.phone: "",
@@ -201,9 +203,13 @@ export default {
       handler: function (newVal, oldVal) {
         if (newVal) {
           this.dialogVisible = true;
+          this.form.phone = this.$store.state.phone;
 
-          if (this.$store.state.phone) {
-            this.form.phone = this.$store.state.phone;
+          if (!this.$store.state.phone) {
+            if (this.form.name || this.form.code) {
+              this.form.name = "";
+              this.form.code = "";
+            }
           }
         }
       },
@@ -212,12 +218,20 @@ export default {
   methods: {
     handInput(value) {
       // console.log(value);
+      this.mobile = value.replace(/[^\d]/g, "");
+    },
+    handInput1(value) {
       this.form.phone = value.replace(/[^\d]/g, "");
+
+      if (!this.form.phone) {
+        this.$store.commit("setPhone", "");
+      }
     },
     getAuthCode() {
       this.getCode();
       this.sendAuthCode = false;
       this.auth_time = 60;
+
       let auth_timetimer = window.setInterval(() => {
         this.auth_time--;
         if (this.auth_time <= 0) {
@@ -308,16 +322,17 @@ export default {
     },
 
     open() {
-      if (this.form.phone && this.form.phone.length === 11) {
+      if (this.mobile && this.mobile.length === 11) {
         this.$store.commit("setRegisterDia", true);
-        this.$store.commit("setPhone", this.form.phone);
+        this.$store.commit("setPhone", this.mobile);
+        this.form.phone = this.mobile;
       } else {
-        if (!this.form.phone) {
+        if (!this.mobile) {
           this.$message({
             message: "请输入手机号",
             type: "warning",
           });
-        } else if (this.form.phone.length < 11 && this.form.phone.length > 0) {
+        } else if (this.mobile.length < 11 && this.mobile.length > 0) {
           this.$message({
             message: "手机号位数不正确",
             type: "warning",

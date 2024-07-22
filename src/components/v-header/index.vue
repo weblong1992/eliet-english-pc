@@ -63,6 +63,9 @@ export default {
     },
     open() {
       this.$store.commit("setRegisterDia", true);
+      // 清空电话号码
+      this.$store.commit("setPhone", '');
+
     },
   },
 };
