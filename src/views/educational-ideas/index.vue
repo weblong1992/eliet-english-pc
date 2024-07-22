@@ -325,7 +325,7 @@ export default {
       position: relative;
       display: flex;
       justify-content: flex-end;
-      padding-right: 360px;
+      padding-right: 300px;
       padding-top: 190px;
 
       & > div {
@@ -338,6 +338,7 @@ export default {
         & > p {
           display: flex;
           justify-content: flex-end;
+          font-size: 20px;
         }
       }
     }

@@ -6,13 +6,20 @@
 
       <!-- 悬浮框 -->
       <div class="fixed-contain">
-        <div>
-          <div>
-            <img src="~@/assets/image/home/zxzx.png" width="36" height="34" />
-          </div>
+        <el-popover
+          placement="left"
+          trigger="hover"
+          popper-class="customPopper"
+        >
+          <div><img src="~@/assets/image/home/zxzx_new.jpg" width="100" /></div>
+          <div slot="reference">
+            <div class="gzh_box">
+              <img src="~@/assets/image/home/zxzx.png" width="36" height="34" />
+            </div>
 
-          <div>在线咨询</div>
-        </div>
+            <div>在线咨询</div>
+          </div>
+        </el-popover>
 
         <!-- <div>
           <div>
@@ -378,6 +385,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
   }
 }
 

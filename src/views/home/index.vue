@@ -255,7 +255,7 @@
       <div>
         <div>
           <div>100%</div>
-          <div>1名校本科</div>
+          <div>名校本科</div>
         </div>
 
         <div>
