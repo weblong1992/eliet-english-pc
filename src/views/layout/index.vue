@@ -52,6 +52,7 @@
         <span>Eliet English邀您开启定制化学习之旅 </span>
         <el-input
           placeholder="请输入您的手机号"
+          maxlength="11"
           v-model="mobile"
           @input="handInput"
         />
@@ -101,9 +102,10 @@
           <el-form-item label="">
             <el-input
               class="myInput"
+              maxlength="11"
               v-model="form.phone"
               placeholder="手机号/Phone"
-              @handInput="handInput1"
+              @input="handInput1"
             >
               <template #prefix>
                 <div class="prefix">
@@ -118,6 +120,8 @@
           <el-form-item label="">
             <el-input
               v-model="form.code"
+              maxlength="6"
+              @input="handInput2"
               class="myInput yzm"
               placeholder="请输入验证码"
             >
@@ -217,14 +221,25 @@ export default {
   },
   methods: {
     handInput(value) {
-      // console.log(value);
-      this.mobile = value.replace(/[^\d]/g, "");
+      const validPattern = /^[0-9]*$/;
+      if (!validPattern.test(value)) {
+        this.mobile = value.replace(/[^0-9]/g, "");
+      }
     },
     handInput1(value) {
-      this.form.phone = value.replace(/[^\d]/g, "");
+      const validPattern = /^[0-9]*$/;
+      if (!validPattern.test(value)) {
+        this.form.phone = value.replace(/[^0-9]/g, "");
+      }
 
       if (!this.form.phone) {
         this.$store.commit("setPhone", "");
+      }
+    },
+    handInput2(value) {
+      const validPattern = /^[0-9]*$/;
+      if (!validPattern.test(value)) {
+        this.form.code = value.replace(/[^0-9]/g, "");
       }
     },
     getAuthCode() {

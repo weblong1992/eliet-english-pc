@@ -22,6 +22,7 @@
             <div style="width: 163px">
               <el-input
                 v-model="mobile"
+                maxlength="11"
                 @input="handInput"
                 size="mini"
                 placeholder="请输入手机号"
@@ -281,8 +282,10 @@ export default {
   },
   methods: {
     handInput(value) {
-      // console.log(value);
-      this.mobile = value.replace(/[^\d]/g, "");
+      const validPattern = /^[0-9]*$/;
+      if (!validPattern.test(value)) {
+        this.mobile = value.replace(/[^0-9]/g, "");
+      }
     },
 
     open() {
