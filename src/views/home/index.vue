@@ -338,8 +338,11 @@ export default {
     .con-img-box {
       width: 100%;
       height: 100%;
-      background-image: url("~@/assets/image/home/hc1.jpg");
-      background-size: cover; /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
+      background-image: url("~@/assets/image/home/hc.jpg");
+      // background-size: 100% 85%;
+      background-size: 100% 810px;
+      //contain cover
+      // background-size: cover; /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
       position: absolute; /* 不可缺少 */
       /* overflow: hidden; */
       /* overflow: auto; */
@@ -379,7 +382,7 @@ export default {
       width: 100%;
       height: 220px;
       position: absolute;
-      bottom: -110px;
+      bottom: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -404,14 +407,14 @@ export default {
 
         & > p:nth-child(1) {
           margin-bottom: 10px;
-          padding: 3px 0;
+          padding: 3px 5px;
         }
       }
     }
   }
 
   .aboutUs {
-    padding-top: 250px;
+    padding-top: 50px;
 
     .tit {
       display: flex;
