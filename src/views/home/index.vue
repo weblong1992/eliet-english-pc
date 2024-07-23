@@ -306,108 +306,406 @@ export default {
 .home {
   width: 100%;
   height: 100%;
+  // height: 590px;
+  // .el-carousel /deep/ .el-carousel__container {
+  //   height: 960px;
+  // }
 
-  .con {
-    position: relative;
-    position: relative;
-    width: 100%;
-    height: 960px;
-    // height: 590px;
-    // .el-carousel /deep/ .el-carousel__container {
-    //   height: 960px;
-    // }
-
-    // .con-img-box1,
-    // .con-img-box2 {
-    //   width: 100%;
-    //   height: 100%;
-
-    //   background-image: url("~@/assets/image/home/hc1.jpg");
-    //   background-size: cover; /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
-    //   position: absolute; /* 不可缺少 */
-    //   /* overflow: hidden; */
-    //   /* overflow: auto; */
-    //   z-index: -1;
-    //   background-repeat: no-repeat;
-    // }
-
-    // .con-img-box2 {
-    //   background-image: url("~@/assets/image/home/bg.jpg");
-    // }
-
-    .con-img-box {
+  @media screen and (min-width: 1220px) and (max-width: 1600px) {
+    .con {
+      position: relative;
       width: 100%;
-      height: 100%;
-      background-image: url("~@/assets/image/home/hc.jpg");
-      // background-size: 100% 85%;
-      background-size: 100% 810px;
-      //contain cover
-      // background-size: cover; /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
-      position: absolute; /* 不可缺少 */
-      /* overflow: hidden; */
-      /* overflow: auto; */
-      z-index: -1;
-      background-repeat: no-repeat;
-    }
+      height: 700px;
+      .con-img-box {
+        width: 100%;
+        height: 100%;
+        background-image: url("~@/assets/image/home/hc.jpg");
+        // background-size: 100% 85%;
+        // background-size: 100% 810px;
+        //contain cover
+        // background-size: cover; /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
+        position: absolute; /* 不可缺少 */
+        /* overflow: hidden; */
+        /* overflow: auto; */
+        z-index: -1;
+        background-repeat: no-repeat;
+      }
 
-    .center-desc {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
+      .center-desc {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
 
-      & > .center-desc-inner {
+        & > .center-desc-inner {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          & > p {
+            text-align: center;
+            // background-color: $fontDescColor;
+            font-size: 50px;
+            padding: 2px;
+            color: #fff;
+            white-space: nowrap;
+          }
+
+          & > p:nth-child(1) {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      .bottom {
+        width: 100%;
+        height: 220px;
+        position: absolute;
+        bottom: 0px;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        & > p {
-          text-align: center;
-          // background-color: $fontDescColor;
-          font-size: 50px;
-          padding: 2px;
-          color: #fff;
-          white-space: nowrap;
+        .bottom_inner {
+          position: absolute;
+          width: 80%;
+          height: 100%;
+          background-color: $mainColor;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 2;
+
+          & > p {
+            color: #fff;
+            // background-color: $fontDescColor;
+            font-size: 50px;
+          }
+
+          & > p:nth-child(1) {
+            margin-bottom: 10px;
+            padding: 3px 5px;
+          }
+        }
+      }
+
+      .aboutUs {
+        .tit {
+          display: flex;
+          justify-content: center;
+          .tit-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 50px;
+            .nav {
+              width: 50px;
+              height: 4px;
+              background-color: $mainColor;
+              border-radius: 2px;
+              margin-top: 3px;
+            }
+          }
         }
 
-        & > p:nth-child(1) {
-          margin-bottom: 20px;
+        .introduce {
+          margin-top: 24px;
+          .desc {
+            width: 730px;
+            margin: 0 auto;
+            // color: #686868;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            text-align: center;
+          }
+        }
+
+        .icon_desc {
+          width: 100%;
+          height: 300px;
+          display: flex;
+          margin-top: 85px;
+
+          .icon_desc_inner {
+            flex: 1;
+            display: flex;
+            padding: 0 360px;
+            .item {
+              flex: 1;
+              display: flex;
+              margin-right: 10px;
+              display: flex;
+
+              flex-direction: column;
+
+              .item_top {
+                width: 100%;
+                height: 15px;
+                background-color: $mainColor;
+              }
+
+              .item_bottom {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: $areaBgColor;
+
+                .item_num {
+                  color: $mainColor;
+
+                  & > span:nth-child(1) {
+                    font-size: 60px;
+                    line-height: 60px;
+                  }
+
+                  & > span:nth-child(2) {
+                    font-size: 20px;
+                    line-height: 30px;
+                  }
+                }
+
+                .item_icon {
+                  margin-bottom: 30px;
+                }
+
+                .item_icon1 {
+                  background-image: url("~@/assets/image/home/ppcd.png");
+                  background-repeat: no-repeat;
+                  width: 59px;
+                  height: 59px;
+                }
+
+                .item_icon2 {
+                  background-image: url("~@/assets/image/home/jyjt.png");
+                  background-repeat: no-repeat;
+                  width: 59px;
+                  height: 59px;
+                }
+
+                .item_icon3 {
+                  background-image: url("~@/assets/image/home/zy.png");
+                  background-repeat: no-repeat;
+                  width: 70px;
+                  height: 61px;
+                }
+
+                .item_num {
+                  margin-bottom: 15px;
+                }
+              }
+            }
+            .item:last-of-type {
+              margin-right: 0px;
+            }
+          }
         }
       }
     }
+  }
 
-    .bottom {
+  @media screen and (min-width: 1650px) {
+    .con {
+      position: relative;
       width: 100%;
-      height: 220px;
-      position: absolute;
-      bottom: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .bottom_inner {
-        position: absolute;
-        width: 80%;
+      height: 960px;
+      .con-img-box {
+        width: 100%;
         height: 100%;
-        background-color: $mainColor;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        background-image: url("~@/assets/image/home/hc.jpg");
+        // background-size: 100% 85%;
+        background-size: 100% 810px;
+        //contain cover
+        // background-size: cover; /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
+        position: absolute; /* 不可缺少 */
+        /* overflow: hidden; */
+        /* overflow: auto; */
+        z-index: -1;
+        background-repeat: no-repeat;
+      }
+
+      .center-desc {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 2;
 
-        & > p {
-          color: #fff;
-          // background-color: $fontDescColor;
-          font-size: 50px;
+        & > .center-desc-inner {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          & > p {
+            text-align: center;
+            // background-color: $fontDescColor;
+            font-size: 50px;
+            padding: 2px;
+            color: #fff;
+            white-space: nowrap;
+          }
+
+          & > p:nth-child(1) {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      .bottom {
+        width: 100%;
+        height: 220px;
+        position: absolute;
+        bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .bottom_inner {
+          position: absolute;
+          width: 80%;
+          height: 100%;
+          background-color: $mainColor;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 2;
+
+          & > p {
+            color: #fff;
+            // background-color: $fontDescColor;
+            font-size: 50px;
+          }
+
+          & > p:nth-child(1) {
+            margin-bottom: 10px;
+            padding: 3px 5px;
+          }
+        }
+      }
+
+      .aboutUs {
+        padding-top: 50px;
+
+        .tit {
+          display: flex;
+          justify-content: center;
+          .tit-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 50px;
+            .nav {
+              width: 50px;
+              height: 4px;
+              background-color: $mainColor;
+              border-radius: 2px;
+              margin-top: 3px;
+            }
+          }
         }
 
-        & > p:nth-child(1) {
-          margin-bottom: 10px;
-          padding: 3px 5px;
+        .introduce {
+          margin-top: 24px;
+          .desc {
+            width: 730px;
+            margin: 0 auto;
+            // color: #686868;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            text-align: center;
+          }
+        }
+
+        .icon_desc {
+          width: 100%;
+          height: 300px;
+          display: flex;
+          margin-top: 85px;
+
+          .icon_desc_inner {
+            flex: 1;
+            display: flex;
+            padding: 0 360px;
+            .item {
+              flex: 1;
+              display: flex;
+              margin-right: 10px;
+              display: flex;
+
+              flex-direction: column;
+
+              .item_top {
+                width: 100%;
+                height: 15px;
+                background-color: $mainColor;
+              }
+
+              .item_bottom {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: $areaBgColor;
+
+                .item_num {
+                  color: $mainColor;
+
+                  & > span:nth-child(1) {
+                    font-size: 60px;
+                    line-height: 60px;
+                  }
+
+                  & > span:nth-child(2) {
+                    font-size: 20px;
+                    line-height: 30px;
+                  }
+                }
+
+                .item_icon {
+                  margin-bottom: 30px;
+                }
+
+                .item_icon1 {
+                  background-image: url("~@/assets/image/home/ppcd.png");
+                  background-repeat: no-repeat;
+                  width: 59px;
+                  height: 59px;
+                }
+
+                .item_icon2 {
+                  background-image: url("~@/assets/image/home/jyjt.png");
+                  background-repeat: no-repeat;
+                  width: 59px;
+                  height: 59px;
+                }
+
+                .item_icon3 {
+                  background-image: url("~@/assets/image/home/zy.png");
+                  background-repeat: no-repeat;
+                  width: 70px;
+                  height: 61px;
+                }
+
+                .item_num {
+                  margin-bottom: 15px;
+                }
+              }
+            }
+            .item:last-of-type {
+              margin-right: 0px;
+            }
+          }
         }
       }
     }
