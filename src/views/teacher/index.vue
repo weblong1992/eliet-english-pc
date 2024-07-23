@@ -600,7 +600,8 @@ export default {
 
           & > img {
             width: 200px;
-            height: 100px;
+            width: 200px;
+            // height: 100px;
             position: absolute;
           }
         }
