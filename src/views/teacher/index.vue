@@ -455,12 +455,14 @@ export default {
                     rich: {
                       c: {
                         color: "rgb(98,137,169)",
+                        // color: "#629499",
                         fontSize: 50,
                         fontWeight: "bold",
                         lineHeight: 5,
                       },
                       b: {
                         color: "rgb(98,137,169)",
+                        color: "#629499",
                         fontSize: 40,
                         lineHeight: 5,
                       },
