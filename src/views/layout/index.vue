@@ -194,7 +194,7 @@
         @close="handleColse"
       >
         <div class="img_box">
-          <img src="~@/assets/image/common/success.png" />
+          <img src="~@/assets/image/common/success.jpg" />
         </div>
       </el-dialog>
     </div>
@@ -216,7 +216,7 @@ export default {
   },
   data() {
     return {
-      successDiaFlag: true, //注册成功弹窗
+      successDiaFlag: false, //注册成功弹窗
       mobile: "",
       num: 1, //1 用户协议 2 演示政策
       checked: true,
@@ -345,12 +345,14 @@ export default {
         .then((res) => {
           // console.log(res);
           if (res.status == 200) {
-            this.$message({
-              type: "success",
-              message: res.message,
-            });
+            // this.$message({
+            //   type: "success",
+            //   message: res.message,
+            // });
 
             this.close();
+
+            this.successDiaFlag = true;
           } else {
             this.$message({
               type: "warning",
@@ -415,7 +417,6 @@ export default {
   z-index: 100;
   width: 70px;
   // height: 279px;
-
   background: #fff;
   color: #2d2d2d;
   position: fixed;
@@ -423,7 +424,6 @@ export default {
   // cursor: pointer;
   border-radius: 25px;
   padding: 10px 0;
-
   // background-color: #fefefe;
   // border-radius: 20px;
   // background-image: url("~@/assets/image/home/xfj.png");
