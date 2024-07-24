@@ -60,115 +60,144 @@
       </el-form>
     </div>
 
-    <el-dialog
-      center
-      title="开启定制"
-      :visible.sync="dialogVisible"
-      width="25%"
-      @close="close"
-    >
+    <div class="dialog_box">
       <el-dialog
-        width="70%"
-        :title="num === 1 ? '用户协议' : '隐私政策'"
-        :visible.sync="innerVisible"
-        append-to-body
+        center
+        title="开启定制"
+        :visible.sync="dialogVisible"
+        width="25%"
+        @close="close"
       >
-        <div>
-          <UserAgreement v-if="num === 1" />
+        <el-dialog
+          width="70%"
+          :title="num === 1 ? '用户协议' : '隐私政策'"
+          :visible.sync="innerVisible"
+          append-to-body
+        >
+          <div>
+            <UserAgreement v-if="num === 1" />
 
-          <PrivacyPolicy v-if="num === 2" />
+            <PrivacyPolicy v-if="num === 2" />
+          </div>
+        </el-dialog>
+
+        <!-- 弹窗 -->
+        <el-form ref="ruleForm" label-width="0px" class="demo-ruleForm">
+          <div class="inputDeep">
+            <el-form-item label="">
+              <el-input
+                v-model="form.name"
+                class="myInput"
+                placeholder="孩子姓名/Name"
+              >
+                <template #prefix>
+                  <div class="prefix">
+                    <img
+                      src="~@/assets/image/common/xm.png"
+                      alt=""
+                      width="16"
+                    />
+                  </div>
+                </template>
+              </el-input>
+            </el-form-item>
+          </div>
+
+          <div>
+            <el-form-item label="">
+              <el-input
+                class="myInput"
+                maxlength="11"
+                v-model="form.phone"
+                placeholder="手机号/Phone"
+                @input="handInput1"
+              >
+                <template #prefix>
+                  <div class="prefix">
+                    <img
+                      src="~@/assets/image/common/dh.png"
+                      alt=""
+                      width="16"
+                    />
+                  </div>
+                </template>
+              </el-input>
+            </el-form-item>
+          </div>
+
+          <div>
+            <el-form-item label="">
+              <el-input
+                v-model="form.code"
+                maxlength="6"
+                @input="handInput2"
+                class="myInput yzm"
+                placeholder="请输入验证码"
+              >
+                <template #prefix>
+                  <div class="prefix">
+                    <img
+                      src="~@/assets/image/common/yx.png"
+                      alt=""
+                      width="16"
+                    />
+                  </div>
+                </template>
+
+                <template #suffix>
+                  <div class="suffix">
+                    <el-button
+                      v-show="sendAuthCode"
+                      size="mini"
+                      class="mybtn"
+                      @click.prevent="getAuthCode"
+                      >获取验证码</el-button
+                    >
+
+                    <span v-show="!sendAuthCode" class="auth_text">
+                      <span class="auth_text_blue">{{ auth_time }} </span>
+                      秒之后重新发送</span
+                    >
+                  </div>
+                </template>
+              </el-input>
+            </el-form-item>
+          </div>
+          <!-- 用户协议和隐私协议 -->
+          <div class="xyBox">
+            <!-- `checked` 为 true 或 false -->
+
+            <div class="yxTxt">
+              <el-checkbox v-model="checked"></el-checkbox>
+              <span class="ml-5">我已阅读并同意</span>
+              <span class="mycolor" @click="agreement(1)"
+                >ELIET ENGLISH用户协议</span
+              >
+              <b>和</b>
+              <span class="mycolor" @click="agreement(2)">隐私政策</span>
+            </div>
+          </div>
+        </el-form>
+        <span slot="footer" class="dialog-footer">
+          <el-button class="submitBtn" @click="register">提交申请</el-button>
+        </span>
+      </el-dialog>
+    </div>
+
+    <!-- 注册成功弹窗 -->
+    <div class="dialog_box">
+      <el-dialog
+        top="20vh"
+        title="注册成功"
+        :visible="successDiaFlag"
+        width="30%"
+        @close="handleColse"
+      >
+        <div class="img_box">
+          <img src="~@/assets/image/common/success.png" />
         </div>
       </el-dialog>
-
-      <!-- 弹窗 -->
-      <el-form ref="ruleForm" label-width="0px" class="demo-ruleForm">
-        <div class="inputDeep">
-          <el-form-item label="">
-            <el-input
-              v-model="form.name"
-              class="myInput"
-              placeholder="孩子姓名/Name"
-            >
-              <template #prefix>
-                <div class="prefix">
-                  <img src="~@/assets/image/common/xm.png" alt="" width="16" />
-                </div>
-              </template>
-            </el-input>
-          </el-form-item>
-        </div>
-
-        <div>
-          <el-form-item label="">
-            <el-input
-              class="myInput"
-              maxlength="11"
-              v-model="form.phone"
-              placeholder="手机号/Phone"
-              @input="handInput1"
-            >
-              <template #prefix>
-                <div class="prefix">
-                  <img src="~@/assets/image/common/dh.png" alt="" width="16" />
-                </div>
-              </template>
-            </el-input>
-          </el-form-item>
-        </div>
-
-        <div>
-          <el-form-item label="">
-            <el-input
-              v-model="form.code"
-              maxlength="6"
-              @input="handInput2"
-              class="myInput yzm"
-              placeholder="请输入验证码"
-            >
-              <template #prefix>
-                <div class="prefix">
-                  <img src="~@/assets/image/common/yx.png" alt="" width="16" />
-                </div>
-              </template>
-
-              <template #suffix>
-                <div class="suffix">
-                  <el-button
-                    v-show="sendAuthCode"
-                    size="mini"
-                    class="mybtn"
-                    @click.prevent="getAuthCode"
-                    >获取验证码</el-button
-                  >
-
-                  <span v-show="!sendAuthCode" class="auth_text">
-                    <span class="auth_text_blue">{{ auth_time }} </span>
-                    秒之后重新发送</span
-                  >
-                </div>
-              </template>
-            </el-input>
-          </el-form-item>
-        </div>
-        <!-- 用户协议和隐私协议 -->
-        <div class="xyBox">
-          <!-- `checked` 为 true 或 false -->
-
-          <div class="yxTxt">
-            <el-checkbox v-model="checked"></el-checkbox>
-            <span class="ml-5">我已阅读并同意</span>
-            <span class="mycolor" @click="agreement(1)"
-              >ELIET ENGLISH用户协议</span
-            >
-            <b>和</b>
-            <span class="mycolor" @click="agreement(2)">隐私政策</span>
-          </div>
-        </div>
-      </el-form>
-      <span slot="footer" class="dialog-footer">
-        <el-button class="submitBtn" @click="register">提交申请</el-button>
-      </span>
-    </el-dialog>
+    </div>
   </div>
 </template>
 <script>
@@ -187,6 +216,7 @@ export default {
   },
   data() {
     return {
+      successDiaFlag: true, //注册成功弹窗
       mobile: "",
       num: 1, //1 用户协议 2 演示政策
       checked: true,
@@ -319,6 +349,7 @@ export default {
               type: "success",
               message: res.message,
             });
+
             this.close();
           } else {
             this.$message({
@@ -359,6 +390,9 @@ export default {
       console.log(num);
       this.num = num;
       this.innerVisible = true;
+    },
+    handleColse() {
+      this.successDiaFlag = false;
     },
   },
 };
@@ -515,6 +549,16 @@ export default {
       color: $mainColor;
       cursor: pointer;
     }
+  }
+}
+
+.dialog_box ::v-deep .el-dialog {
+  opacity: 0.9;
+
+  & .img_box {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
   }
 }
 </style>

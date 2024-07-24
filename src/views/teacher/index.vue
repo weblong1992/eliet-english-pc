@@ -345,7 +345,7 @@ export default {
       }
 
       let func = (params) => {
-        console.log("----", params);
+        // console.log("----", params);
         // let percent = ((params.value / total) * 100).toFixed(1)
         // let name = params.name.replace(/\n/g, '')
         // if (params.name !== '') {
@@ -394,6 +394,7 @@ export default {
           icon: "circle",
           right: "8%",
           top: "5%",
+          selectedMode: false, //去除点击事件
           textStyle: {
             // color: "#fff",
             fontSize: 20,
@@ -408,6 +409,7 @@ export default {
             center: ["50%", "50%"],
             radius: ["50%", "51%"],
             hoverAnimation: false,
+            silent: true, //去除鼠标放上去放大效果
             itemStyle: {
               normal: {
                 label: {
