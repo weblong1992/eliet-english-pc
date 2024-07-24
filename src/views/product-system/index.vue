@@ -132,7 +132,7 @@
 
         <div>
           <div class="tit">Eliet看世界</div>
-          <div class="desc">面向Eliet精英级以上学员开放</div>
+          <div class="desc">面向Eliet精英级以上会员开放</div>
 
           <div>
             <p>打造精英学员专属学习、社交圈层。</p>
