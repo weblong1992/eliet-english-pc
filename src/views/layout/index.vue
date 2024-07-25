@@ -2,7 +2,7 @@
   <div class="layout">
     <Vheader />
     <div class="main">
-      <router-view />
+      <router-view class="page" />
 
       <!-- 悬浮框 -->
       <div class="fixed-contain">
@@ -273,6 +273,22 @@ export default {
       }
     },
     getAuthCode() {
+      if (!this.form.phone) {
+        this.$message({
+          type: "warning",
+          message: "请输入手机号",
+        });
+        return;
+      }
+
+      if (this.form.phone.length > 0 && this.form.phone.length < 11) {
+        this.$message({
+          type: "warning",
+          message: "请输入十一位数手机号",
+        });
+        return;
+      }
+
       this.getCode();
       this.sendAuthCode = false;
       this.auth_time = 60;
