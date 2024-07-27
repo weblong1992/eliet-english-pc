@@ -574,7 +574,7 @@ export default {
   & .img_box {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    // padding: 20px;
   }
 }
 </style>
