@@ -228,7 +228,7 @@ export default {
   }
 
   .ppjs {
-    margin: 0 200px;
+    margin: 0 150px;
   }
 
   .links_box {
