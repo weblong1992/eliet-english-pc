@@ -166,7 +166,9 @@ export default {
     align-items: center;
     justify-content: center;
     background-image: url("~@/assets/image/home/bg.jpg");
-    background-size: cover;
+    background-size: 100% 100%;
+
+    // background-size: cover;
     // width: 100%;
     // background-image: url("~@/assets/image/educational-ideas/gjtd_bg.png");
     background-repeat: no-repeat;

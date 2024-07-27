@@ -18,8 +18,8 @@
 
       <div class="bottom">
         <div class="bottom_inner">
-          <p>首创定制化英语学习模式 &nbsp;&nbsp;只为1%社会精英阶层服务</p>
-          <p>通过语言学习为未来领袖赋能</p>
+          <!-- <p>首创定制化英语学习模式 &nbsp;&nbsp;只为1%社会精英阶层服务</p>
+          <p>通过语言学习为未来领袖赋能</p> -->
         </div>
       </div>
     </div>
@@ -39,8 +39,7 @@
         </h1>
         <p class="desc">
           公司围绕教育 服务
-          科技三大内核，打破传统课程平台内容的束缚，以个性化学习定制为切入点，构
-          建出一套适合不同孩子的专属语言学习生态圈。以专业的教学品质，满足不同年龄，不同地域，不同文化背景孩子的个性化语言学习要求。
+          科技三大内核，打破传统课程平台内容的束缚，以个性化学习定制为切入点，构建出一套适合不同孩子的专属语言学习生态圈。以专业的教学品质，满足不同年龄，不同地域，不同文化背景孩子的个性化语言学习要求。
         </p>
       </div>
       <div class="icon_desc">
@@ -311,7 +310,7 @@ export default {
   //   height: 960px;
   // }
 
-  @media screen and (min-width: 1220px) and (max-width: 1600px) {
+  @media screen and (min-width: 900px) and (max-width: 1600px) {
     .con {
       position: relative;
       width: 100%;
@@ -321,7 +320,7 @@ export default {
         height: 100%;
         background-image: url("~@/assets/image/home/hc.jpg");
         // background-size: 100% 85%;
-        // background-size: 100% 810px;
+        background-size: 100% 520px;
         //contain cover
         // background-size: cover; /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
         position: absolute; /* 不可缺少 */
@@ -361,7 +360,7 @@ export default {
 
       .bottom {
         width: 100%;
-        height: 220px;
+        height: 235px;
         position: absolute;
         bottom: 0px;
         display: flex;
@@ -370,19 +369,18 @@ export default {
 
         .bottom_inner {
           position: absolute;
-          width: 80%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
           height: 100%;
-          background-color: $mainColor;
-          border-radius: 10px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
           z-index: 2;
+          background-image: url("~@/assets/image/home/bb.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 70% 235px;
 
           & > p {
             color: #fff;
-            // background-color: $fontDescColor;
             font-size: 50px;
           }
 
@@ -519,7 +517,6 @@ export default {
         width: 100%;
         height: 100%;
         background-image: url("~@/assets/image/home/hc.jpg");
-        // background-size: 100% 85%;
         background-size: 100% 810px;
         //contain cover
         // background-size: cover; /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
@@ -560,35 +557,34 @@ export default {
 
       .bottom {
         width: 100%;
-        height: 220px;
+        height: 235px;
         position: absolute;
-        bottom: 50px;
+        bottom: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
 
         .bottom_inner {
           position: absolute;
-          width: 80%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
           height: 100%;
-          background-color: $mainColor;
-          border-radius: 10px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
           z-index: 2;
+          background-image: url("~@/assets/image/home/bb.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 70% 235px;
+          // background-size: 1200x 235px;
+          // & > p {
+          //   color: #fff;
+          //   font-size: 50px;
+          // }
 
-          & > p {
-            color: #fff;
-            // background-color: $fontDescColor;
-            font-size: 50px;
-          }
-
-          & > p:nth-child(1) {
-            margin-bottom: 10px;
-            padding: 3px 5px;
-          }
+          // & > p:nth-child(1) {
+          //   margin-bottom: 10px;
+          //   padding: 3px 5px;
+          // }
         }
       }
 
@@ -970,6 +966,7 @@ export default {
     height: 395px;
     width: 100%;
     background-size: cover;
+
     background-image: url("~@/assets/image/home/gjhyxjs_bg.png"),
       url("~@/assets/image/home/gjhyxjs.jpg");
     background-repeat: no-repeat no-repeat;
@@ -1005,7 +1002,8 @@ export default {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    padding-left: 360px;
+    // padding-left: 360px;
+    justify-content: center;
     font-size: 40px;
 
     & > div {
@@ -1026,14 +1024,14 @@ export default {
     }
 
     .phone {
-      width: 1130px;
+      // width: 1130px;
+      width: 700px;
       height: 849px;
       background-image: url("~@/assets/image/home/ljkqbg.png");
       background-repeat: no-repeat;
       // display: flex;
       // justify-content: center;
       // align-items: center;
-
       // height: 395px;
       // width: 100%;
       // background-size: cover;

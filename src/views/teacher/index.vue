@@ -286,11 +286,13 @@ import * as echarts from "echarts";
 export default {
   components: {},
   data() {
-    return {};
+    return {
+      myChart: null,
+    };
   },
   methods: {
     initChart() {
-      const chart = echarts.init(document.getElementById("chart"));
+      this.myChart = echarts.init(document.getElementById("chart"));
       let color = ["#ff4343", "#f69846", "#f6d54a", "#45dbf7"];
       let names = ["标准", "专业", "国际", "本地"];
       let data = [1, 1, 1, 1];
@@ -480,11 +482,23 @@ export default {
         ],
       };
 
-      chart.setOption(option);
+      this.myChart.setOption(option);
+    },
+    handleResize() {
+      if (this.myChart) {
+        this.myChart.resize();
+      }
     },
   },
   mounted() {
     this.initChart();
+    window.addEventListener("resize", this.handleResize);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.handleResize);
+    if (this.myChart) {
+      this.myChart.dispose(); // 清理图表实例
+    }
   },
 };
 </script>
@@ -520,7 +534,7 @@ export default {
         .imgBox {
           width: 276px;
           height: 200px;
-          background-color: red;
+          // background-color: red;
 
           & > img {
             border-radius: 20px;

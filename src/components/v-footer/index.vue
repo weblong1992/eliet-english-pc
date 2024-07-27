@@ -30,14 +30,14 @@
       </div> -->
     </div>
 
-    <div class="qyjs">
+    <div class="qyjs ppjs">
       <div>
-        <div>企业介绍</div>
+        <div>品牌介绍</div>
         <div class="line"></div>
       </div>
 
-      <div>
-        <p>品牌介绍</p>
+      <div class="ppjsTxt">
+        <!-- <p>品牌介绍</p> -->
         <p>
           Eliet
           English2018年成立于美国纽约，我们致力于为全球精英家庭提供完整的定制化教学服务。学员主要来自美国英国等发达国家。2024年我们落地中国杭州，我们期盼用全球化的课程服务团队为中国孩子带来真正的领先的学习体系。
@@ -68,6 +68,12 @@
       </div>
 
       <div class="links_box">
+        <div @click="jump(0)">
+          <div>
+            <img src="~@/assets/image/home/xhs2.png" width="32" height="32" />
+          </div>
+          <div class="mt-10">小红书</div>
+        </div>
         <div @click="jump(1)">
           <div>
             <img src="~@/assets/image/home/bd.png" width="24" height="27" />
@@ -101,6 +107,13 @@ export default {
   methods: {
     jump(num) {
       console.log(num);
+
+      if (num === 0) {
+        window.open(
+          "https://www.xiaohongshu.com/user/profile/601d41600000000001002e57",
+          "_blank"
+        );
+      }
       if (num === 1) {
         window.open("https://www.baidu.com/", "_blank");
       } else if (num === 2) {
@@ -120,7 +133,9 @@ export default {
   box-sizing: border-box;
   background-color: #262627;
   padding: 60px 100px;
+
   display: flex;
+  justify-content: center;
   color: #999999;
 
   .kf {
@@ -182,7 +197,8 @@ export default {
   }
 
   .qyjs {
-    margin-left: 150px;
+    // margin-left: 150px;
+    // margin: 0 100px;
 
     & > div:nth-child(1) {
       margin-bottom: 30px;
@@ -205,6 +221,14 @@ export default {
         margin-bottom: 20px;
       }
     }
+
+    .ppjsTxt {
+      width: 250px;
+    }
+  }
+
+  .ppjs {
+    margin: 0 200px;
   }
 
   .links_box {
