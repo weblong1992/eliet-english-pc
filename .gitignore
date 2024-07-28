@@ -3,6 +3,7 @@
  
 .DS_Store
 node_modules
+eliet-english-pc
 /dist
  
 # local env files
