@@ -124,9 +124,8 @@
         </div>
       </div>
 
-      <div class="sub3">
+      <!-- <div class="sub3">
         <div>
-          <!-- <p>专属学习圈层</p> -->
           <p>以兴趣为起点打造学员专属学习圈层</p>
           <div class="line_box">
             <img src="~@/assets/image/educational-ideas/line.png" width="58" />
@@ -135,6 +134,10 @@
           <p>线上学习资源共享</p>
           <p>丰富的线下配套活动</p>
         </div>
+      </div> -->
+
+      <div class="sub3_new">
+        <div class="xxqcBg"></div>
       </div>
     </div>
   </div>
@@ -327,31 +330,40 @@ export default {
       }
     }
 
-    .sub3 {
+    // .sub3 {
+    //   width: 100%;
+    //   height: 815px;
+    //   background-image: url("~@/assets/image/educational-ideas/zsxxq.png");
+    //   background-repeat: no-repeat;
+    //   box-sizing: border-box;
+    //   position: relative;
+    //   display: flex;
+    //   justify-content: flex-end;
+    //   padding-right: 120px;
+    //   padding-top: 190px;
+
+    //   & > div {
+    //     & .line_box {
+    //       margin: 20px 0;
+    //       display: flex;
+    //       justify-content: flex-end;
+    //     }
+
+    //     & > p {
+    //       display: flex;
+    //       justify-content: flex-end;
+    //       font-size: 20px;
+    //     }
+    //   }
+    // }
+
+    .sub3_new {
       width: 100%;
-      height: 815px;
-      background-image: url("~@/assets/image/educational-ideas/zsxxq.png");
+      height: 660px;
+      margin-top: 60px;
+      background-image: url("~@/assets/image/educational-ideas/xxqc1.png");
       background-repeat: no-repeat;
-      box-sizing: border-box;
-      position: relative;
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 120px;
-      padding-top: 190px;
-
-      & > div {
-        & .line_box {
-          margin: 20px 0;
-          display: flex;
-          justify-content: flex-end;
-        }
-
-        & > p {
-          display: flex;
-          justify-content: flex-end;
-          font-size: 20px;
-        }
-      }
+      background-size: 100% 600px;
     }
   }
 }

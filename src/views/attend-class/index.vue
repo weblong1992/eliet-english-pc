@@ -325,7 +325,6 @@ export default {
     background-image: url("~@/assets/image/attend-class/fiveStepBg.png");
     background-repeat: no-repeat;
 
-    // 878788
     & .tit {
       display: flex;
       justify-content: center;
